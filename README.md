@@ -1,2 +1,2 @@
 # QuantumultX
-圈X自用规则
+圈X自用规则备份
