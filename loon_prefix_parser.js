@@ -14,7 +14,7 @@
  */
 
 var type = $resourceType;
-var DEFAULT_PREFIX = "备mjj";
+var DEFAULT_PREFIX = "备mjj-";
 var pre = DEFAULT_PREFIX;
 var suf = "";
 var emoji = false;
