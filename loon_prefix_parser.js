@@ -3,7 +3,7 @@ Loon 纯资源解析器：给所有节点名前加前缀
 用法：把这个 js 作为 subscription 的 resource parser
 */
 
-const PREFIX = "主力-"; // 改成你想加的前缀
+const PREFIX = "备mjj-"; // 改成你想加的前缀
 
 function done(content) {
   $done(content);
