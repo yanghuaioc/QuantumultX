@@ -547,7 +547,14 @@ var typeName = { 0: "config", 1: "nodes", 2: "rules", 3: "rewrites", 4: "scripts
 
 function finish(content) {
   console.log("[解析器] 资源类型: " + (typeName[type] || type));
-  var result = type === 1 ? processResource(content) : str(content);
+  var raw = str(content);
+  var trimmed = normalizeText(raw).trim();
+  var shouldProcess =
+    type === 1 ||
+    looksLikeBase64(trimmed) ||
+    /^\s*proxies\s*:/m.test(trimmed) ||
+    /^\s*[^#=\n][^=\n]*\s*=/.test(trimmed);
+  var result = shouldProcess ? processResource(raw) : raw;
   console.log("[解析器] 处理完成");
   $done(result);
 }
